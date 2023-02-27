@@ -38,7 +38,7 @@ class TestConnextionTest {
     void createContextAndPage() {
         context = browser.newContext();
         page = context.newPage();
-        login = new Login(page, mail, mdp);
+        login = new Login(page);
     }
 
     @AfterEach
@@ -60,34 +60,31 @@ class TestConnextionTest {
 
     @Test
     void testLogin() {
-        login.Dologin();
+        login.Dologin(mail, mdp);
         page.waitForURL("https://ztrain-web.vercel.app/home");
     }
 
     @Test
     void testLoginErrorPassword() {
-        login.setPassword("wrongpassword12345");
-        login.Dologin();
+        login.Dologin(mail, "wrongpassword12345");
         assertThat(page.getByText("Email ou mot de passe incorrect")).isVisible();
     }
 
     @Test
     void testLoginErrorMail() {
-        login.setMail("erroremail@email.com");
-        login.Dologin();
+        login.Dologin("erroremail@email.com", mdp);
         assertThat(page.getByText("Email ou mot de passe incorrect")).isVisible();
     }
 
     @Test
     void testLoginErrorFormatMail() {
-        login.setMail("erroremail");
-        login.Dologin();
+        login.Dologin("erroremail", mdp);
         assertThat(page.getByText("Le format de l'email est invalid")).isVisible();
     }
 
     @Test
     void testDeconnexion() { //Deconnexion Impossible
-        login.Dologin();
+        login.Dologin(mail, mdp);
         page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Se déconnecter")).click();
         page.waitForURL("https://ztrain-web.vercel.app/auth/login");
     }

@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ac9d49a-a273-43aa-8b76-9a0753bf3a86" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/helyion/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/github/helyion/login/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/io/github/helyion/TestRun.java" afterDir="false" />
+    <list default="true" id="5ac9d49a-a273-43aa-8b76-9a0753bf3a86" name="Changes" comment="Done Login class / Refactor JUnit Test">
+      <change afterPath="$PROJECT_DIR$/src/test/java/io/github/helyion/TestRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/io/github/helyion/step/LoginStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/github/helyion/login/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/github/helyion/login/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/io/github/helyion/TestConnextionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/github/helyion/TestConnextionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +72,7 @@
       <recent name="io.github.helyion" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestConnextionTest.testLogin">
+  <component name="RunManager" selected="JUnit.TestConnextionTest.testLoginErrorFormatMail">
     <configuration name="TestRun" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.github.helyion.TestRun" />
       <module name="Test-ztrain-web-Playwright" />
@@ -181,10 +181,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestConnextionTest.testLoginErrorFormatMail" />
         <item itemvalue="JUnit.TestConnextionTest.testLogin" />
         <item itemvalue="Application.TestRun" />
         <item itemvalue="JUnit.TestConnextionTest" />
-        <item itemvalue="JUnit.TestConnextionTest.testLoginErrorFormatMail" />
         <item itemvalue="JUnit.TestConnextionTest.testLoginErrorMail" />
       </list>
     </recent_temporary>
@@ -199,7 +199,7 @@
       <updated>1677235858206</updated>
       <workItem from="1677235858206" duration="2944000" />
       <workItem from="1677243746659" duration="9074000" />
-      <workItem from="1677487686575" duration="10080000" />
+      <workItem from="1677487686575" duration="15778000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1677487918251</created>
@@ -208,7 +208,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677487918251</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add junit test / start login class">
+      <created>1677498299053</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677498299053</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Done Login class / Refactor JUnit Test">
+      <created>1677504688461</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677504688461</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +230,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="add junit test / start login class" />
+    <MESSAGE value="Done Login class / Refactor JUnit Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done Login class / Refactor JUnit Test" />
   </component>
 </project>
