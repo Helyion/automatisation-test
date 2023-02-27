@@ -18,10 +18,6 @@ public class LoginStep {
     private BrowserContext context;
     private Page page;
     private Login login;
-
-    private String mail = "test.mail@email.com";
-    private String password = "motsdepasse";
-
     @BeforeAll
     public void BeforeAll() {
         playwright = Playwright.create();
@@ -40,8 +36,8 @@ public class LoginStep {
         this.page.navigate("https://ztrain-web.vercel.app/auth/login");
     }
 
-    @When("User logged in the app using the correct mail and password")
-    public void user_logged_in_the_app_using_the_correct_mail_and_password(){
+    @When("User logged in the app using the correct mail {String} and password {String}")
+    public void user_logged_in_the_app_using_the_correct_mail_and_password(String mail, String password){
         this.page.getByPlaceholder("Email").click();
         this.page.getByPlaceholder("Email").fill(mail);
         this.page.getByPlaceholder("Mot de passe").click();
@@ -51,6 +47,6 @@ public class LoginStep {
 
     @Then("User is logged in the app")
     public void User_is_logged_in_the_app(){
-
+        page.waitForURL("https://ztrain-web.vercel.app/home");
     }
 }
