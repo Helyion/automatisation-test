@@ -4,7 +4,6 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.AriaRole;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
-import io.cucumber.java.ar.لكن;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,14 +11,14 @@ import io.github.helyion.login.Login;
 
 public class LoginStep {
 
-    private Playwright playwright;
-    private Browser browser;
+    static Playwright playwright;
+    static Browser browser;
 
     private BrowserContext context;
     private Page page;
-    private Login login;
+
     @BeforeAll
-    public void BeforeAll() {
+    public static void BeforeAll() {
         playwright = Playwright.create();
         browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
     }
@@ -28,7 +27,6 @@ public class LoginStep {
     public void Before(){
         context = browser.newContext();
         page = context.newPage();
-        login = new Login(page);
     }
 
     @Given("User launched ZTrain application")
@@ -36,8 +34,8 @@ public class LoginStep {
         this.page.navigate("https://ztrain-web.vercel.app/auth/login");
     }
 
-    @When("User logged in the app using the correct mail {String} and password {String}")
-    public void user_logged_in_the_app_using_the_correct_mail_and_password(String mail, String password){
+    @When("User logged in the app using mail {string} and password {string}")
+    public void userLoggedInTheAppUsingMailAndPassword(String mail, String password) {
         this.page.getByPlaceholder("Email").click();
         this.page.getByPlaceholder("Email").fill(mail);
         this.page.getByPlaceholder("Mot de passe").click();

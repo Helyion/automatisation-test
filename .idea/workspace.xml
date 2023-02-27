@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ac9d49a-a273-43aa-8b76-9a0753bf3a86" name="Changes" comment="step up cucumber / start first step">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Login.feature" afterDir="false" />
+    <list default="true" id="5ac9d49a-a273-43aa-8b76-9a0753bf3a86" name="Changes" comment="using cucumber">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/io/github/helyion/step/LoginStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/io/github/helyion/step/LoginStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Login.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +198,7 @@
       <updated>1677235858206</updated>
       <workItem from="1677235858206" duration="2944000" />
       <workItem from="1677243746659" duration="9074000" />
-      <workItem from="1677487686575" duration="17106000" />
+      <workItem from="1677487686575" duration="18407000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1677487918251</created>
@@ -228,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677508306139</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="using cucumber">
+      <created>1677509798851</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677509798851</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +246,7 @@
     <MESSAGE value="add junit test / start login class" />
     <MESSAGE value="Done Login class / Refactor JUnit Test" />
     <MESSAGE value="step up cucumber / start first step" />
-    <option name="LAST_COMMIT_MESSAGE" value="step up cucumber / start first step" />
+    <MESSAGE value="using cucumber" />
+    <option name="LAST_COMMIT_MESSAGE" value="using cucumber" />
   </component>
 </project>
