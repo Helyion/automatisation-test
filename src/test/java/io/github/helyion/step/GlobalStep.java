@@ -26,7 +26,7 @@ public class GlobalStep {
     }
 
     @Before
-    public void BeforeLogin(){
+    public void Before(){
         context = browser.newContext();
         page = context.newPage();
     }
@@ -116,6 +116,41 @@ public class GlobalStep {
     @Then("User shouldn't be able to register due to the two password not being long enough")
     public void UserShouldnTBeAbleToRegisterDueToTheTwoPasswordNotBeingLongEnough(){
         assertThat(page.getByText("Le mot de passe doit avoir au moins 8 caractères")).isVisible();
+    }
+
+    //-------------------------------------------------------------------------------------------
+    //------------------------------------PRODUCT-RESEARCH---------------------------------------
+    //-------------------------------------------------------------------------------------------
+
+    @When("User do a research {string}")
+    public void UserDoAResearch(String research){
+        page.getByPlaceholder("Rechecher un produit").click();
+        page.getByPlaceholder("Rechecher un produit").type(research, new Locator.TypeOptions().setDelay(100));
+    }
+
+    @When("User select the all category")
+    public void UserSelectTheAllCategory(){
+        page.locator("#style_select_cat__vyiIE").selectOption("all");
+    }
+
+    @When("User select the electronic category")
+    public void UserSelectTheElectronicCategory(){
+        page.locator("#style_select_cat__vyiIE").selectOption("6267ba6a774b917c18ef6a5a");
+    }
+
+    @When("User select the electromenager category")
+    public void UserSelectTheElectromenagerCategory(){
+        page.locator("#style_select_cat__vyiIE").selectOption("6267bd9864a9f9ca3bc737cd");
+    }
+
+    @When("User select the mode homme category")
+    public void UserSelectTheModeHommeCategory(){
+        page.locator("#style_select_cat__vyiIE").selectOption("6267bb40774b917c18ef6a5d");
+    }
+
+    @Then("User find {string} article")
+    public void UserFindArticle(String article){
+        assertThat(page.getByRole(AriaRole.HEADING, new Page.GetByRoleOptions().setName(article))).isVisible();
     }
 
     @After
