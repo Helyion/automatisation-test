@@ -6,9 +6,8 @@ import io.github.helyion.login.Login;
 import org.junit.jupiter.api.*;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
-class TestConnextionTest {
+class TestConnextion {
     // Shared between all tests in this class.
     static Playwright playwright;
     static Browser browser;
