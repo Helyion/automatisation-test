@@ -13,7 +13,7 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 
 public class LoginStep {
 
-    static Playwright playwright;
+    /*static Playwright playwright;
     static Browser browser;
 
     private BrowserContext context;
@@ -26,13 +26,13 @@ public class LoginStep {
     }
 
     @Before
-    public void Before(){
+    public void BeforeLogin(){
         context = browser.newContext();
         page = context.newPage();
     }
 
-    @Given("User launched ZTrain application")
-    public void userLaunchedZTrainApplication(){
+    @Given("User launched login page of ZTrain application")
+    public void userLaunchedLoginPageOfZTrainApplication(){
         this.page.navigate("https://ztrain-web.vercel.app/auth/login");
     }
 
@@ -68,5 +68,5 @@ public class LoginStep {
     @After
     public void After(){
         page.close();
-    }
+    }*/
 }

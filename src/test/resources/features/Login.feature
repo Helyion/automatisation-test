@@ -1,6 +1,6 @@
 Feature: Login
   Scenario Outline: Login into ZTrain application with correct mail and password
-    Given User launched ZTrain application
+    Given User launched login page of ZTrain application
     When User logged in the app using mail "<Mail>" and password "<Password>"
     Then User is logged in the app
 
@@ -8,8 +8,8 @@ Feature: Login
       | Mail                 | Password     |
       | test.mail@email.com  | motsdepasse  |
 
-  Scenario Outline: Login into ZTrain application with correct mail and password
-    Given User launched ZTrain application
+  Scenario Outline: Login into ZTrain application with incorrect password
+    Given User launched login page of ZTrain application
     When User logged in the app using mail "<Mail>" and password "<Password>"
     Then User shouldn't be able to login due to incorrect password or login
 
@@ -17,8 +17,8 @@ Feature: Login
       | Mail                 | Password       |
       | test.mail@email.com  | Wrongpassword  |
 
-  Scenario Outline: Login into ZTrain application with correct mail and password
-    Given User launched ZTrain application
+  Scenario Outline: Login into ZTrain application with incorrect mail
+    Given User launched login page of ZTrain application
     When User logged in the app using mail "<Mail>" and password "<Password>"
     Then User shouldn't be able to login due to incorrect password or login
 
@@ -26,8 +26,8 @@ Feature: Login
       | Mail                 | Password       |
       | wrongmail@email.com  | motsdepasse    |
 
-  Scenario Outline: Login into ZTrain application with correct mail and password
-    Given User launched ZTrain application
+  Scenario Outline: Login into ZTrain application with incorrect mail and password
+    Given User launched login page of ZTrain application
     When User logged in the app using mail "<Mail>" and password "<Password>"
     Then User shouldn't be able to login due to incorrect password or login
 
@@ -35,8 +35,8 @@ Feature: Login
       | Mail                 | Password       |
       | wrongmail@email.com  | Wrongpassword  |
 
-  Scenario Outline: Login into ZTrain application with correct mail and password
-    Given User launched ZTrain application
+  Scenario Outline: Login into ZTrain application with incorrect mail format
+    Given User launched login page of ZTrain application
     When User logged in the app using mail "<Mail>" and password "<Password>"
     Then User shouldn't be able to login due to incorrect email format
 
