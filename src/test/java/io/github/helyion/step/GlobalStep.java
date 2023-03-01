@@ -133,6 +133,11 @@ public class GlobalStep {
         page.locator("#style_select_cat__vyiIE").selectOption("all");
     }
 
+    @Then("The all category is selected")
+    public void TheAllCategoryIsSelected(){
+        assertThat(page.locator("#style_select_cat__vyiIE")).isVisible();
+    }
+
     @When("User select the electronic category")
     public void UserSelectTheElectronicCategory(){
         page.locator("#style_select_cat__vyiIE").selectOption("6267ba6a774b917c18ef6a5a");
@@ -151,6 +156,64 @@ public class GlobalStep {
     @Then("User find {string} article")
     public void UserFindArticle(String article){
         assertThat(page.getByRole(AriaRole.HEADING, new Page.GetByRoleOptions().setName(article))).isVisible();
+    }
+
+    //-------------------------------------------------------------------------------------------
+    //-------------------------------------------PRODUCT-----------------------------------------
+    //-------------------------------------------------------------------------------------------
+
+    @When("User add {string} product")
+    public void UserAddPorduct(String product){
+        page.locator("#style_popular_product_wrapper__z6J0h").getByRole(AriaRole.BUTTON).click();
+        page.locator("#style_content_cart_wrapper__mqNbf").click();
+        page.locator("#style_card_wrapper__hrc1I svg").first().click();
+        page.locator("#style_card_wrapper__hrc1I svg").first().click();
+        page.locator("#style_card_wrapper__hrc1I svg").nth(1).click();
+        page.locator("#style_card_wrapper__hrc1I svg").nth(1).click();
+        page.locator("#style_card_wrapper__hrc1I svg").nth(2).click();
+        page.getByRole(AriaRole.BUTTON).click();
+        page.locator("#style_content_cart_wrapper__mqNbf").click();
+    }
+
+    @Then("Product should be in the cart")
+    public void ProductShouldBeInTheCart(){
+
+    }
+
+    @Then("User should see the adding notification")
+    public void UserShouldSeeTheAddingNotificaiton(){
+        assertThat(page.getByText("Votre panier à été mis à jour")).isVisible();
+    }
+
+    @When("User open his cart")
+    public void UserOpenHisCart(){
+        page.locator("#style_content_cart_wrapper__mqNbf").click();
+    }
+
+    @Then("User cart should be visible")
+    public void UserCartShouldBeVisible(){
+        assertThat(page.locator("#style_content_cart_header__NIJbw")).isVisible();
+    }
+
+    @Then("User cart shouldn't be visible")
+    public void UserCartShouldnTBeVisible(){
+        assertThat(page.locator("#style_content_cart_header__NIJbw")).not().isVisible();
+    }
+
+    @When("User clear his cart")
+    public void UserClearHisCart(){
+        page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Vider le panier")).click();
+    }
+
+    @When("User remove a product form his cart")
+    public void UserRemoveAProductFromHisCart(){
+
+    }
+
+    @When("User select price range {int} to {int}")
+    public void UserSelectPriceRange(int low, int high){
+        page.locator("#MuiSlider-track css-1t2bqnt");
+
     }
 
     @After
