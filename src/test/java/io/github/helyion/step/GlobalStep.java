@@ -48,11 +48,6 @@ public class GlobalStep {
         this.page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName("Connexion").setExact(true)).click();
     }
 
-    @When("User should be able to login")
-    public void userShouldBeAbleToLogin(){
-        page.waitForURL("https://ztrain-web.vercel.app/home");
-    }
-
     @Then("User shouldn't be able to login due to incorrect password or login")
     public void userShouldnTBeAbleToLoginDueToIncorrectPasswordOrLogin(){
         assertThat(page.getByText("Email ou mot de passe incorrect")).isVisible();
@@ -66,6 +61,21 @@ public class GlobalStep {
     @Then("User is logged in the app")
     public void UserIsLoggedInTheApp(){
         page.waitForURL("https://ztrain-web.vercel.app/home");
+    }
+
+    @When("User hover on his avatar")
+    public void UserClickOnHisAvatar(){
+        page.locator("#style_avatar_wrapper__pEGIQ").hover();
+    }
+
+    @When("User try to logoff")
+    public void UserTryToLogoff(){
+        page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Se déconnecter")).click();
+    }
+
+    @Then("User is logoff")
+    public void UserIsLogff(){
+        page.waitForURL("https://ztrain-web.vercel.app/auth/login");
     }
 
     //-------------------------------------------------------------------------------------------
@@ -156,6 +166,11 @@ public class GlobalStep {
     @Then("User find {string} article")
     public void UserFindArticle(String article){
         assertThat(page.getByRole(AriaRole.HEADING, new Page.GetByRoleOptions().setName(article))).isVisible();
+    }
+
+    @Then("User shouldn't find {string} article")
+    public void UserShouldnTFindArticle(String article){
+        assertThat(page.getByRole(AriaRole.HEADING, new Page.GetByRoleOptions().setName(article))).not().isVisible();
     }
 
     //-------------------------------------------------------------------------------------------
